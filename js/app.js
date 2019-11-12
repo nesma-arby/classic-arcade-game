@@ -1,6 +1,5 @@
-
 // Enemies our player must avoid
-let Enemy = function (Ex, Ey) {
+let Enemy = function(Ex, Ey) {
   // variables applied to each of our instances go here,
   // we've provided one for you to get started
 
@@ -17,7 +16,7 @@ let Enemy = function (Ex, Ey) {
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
-Enemy.prototype.update = function (dt) {
+Enemy.prototype.update = function(dt) {
   for (let i = 0; i < allEnemies.length; i++) {
     allEnemies[i].speed = 170;
   }
@@ -39,15 +38,14 @@ Enemy.prototype.update = function (dt) {
       player.y = 400;
     }
   }
-
 };
 
 // Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function () {
+Enemy.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-Enemy.prototype.reset = function () {
+Enemy.prototype.reset = function() {
   this.x = this.intial_x;
   this.y = this.intial_y;
 };
@@ -66,7 +64,7 @@ let allEnemies = [enemy1, enemy2, enemy3, enemy4];
 // This class requires an update(), render() and
 // a handleInput() method.
 
-let Player = function (x, y) {
+let Player = function(x, y) {
   this.sprite = "images/char-boy.png";
   this.x = x;
   this.y = y;
@@ -76,7 +74,7 @@ let Player = function (x, y) {
 let player = new Player(200, 400);
 
 // Update the player's position, required method for game
-Player.prototype.update = function () {
+Player.prototype.update = function() {
   if (this.y <= -18) {
     document.getElementById("result").textContent = "Congratulations!";
     setTimeout(this.reset(), 1000);
@@ -84,18 +82,18 @@ Player.prototype.update = function () {
   }
 };
 
-let resetResult = function () {
+let resetResult = function() {
   document.getElementById("result").textContent = "";
 };
 
 // Draw the player on the screen, required method for game
-Player.prototype.render = function () {
+Player.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 // method, which should receive user input, allowedKeys (the key which was pressed)
 //and move the player according to that input.
-Player.prototype.handleInput = function (inpt) {
+Player.prototype.handleInput = function(inpt) {
   if (inpt === "left" && this.x > 0) this.x = this.x - 20;
   else if (inpt === "right" && this.x < 400) this.x = this.x + 20;
   else if (inpt === "up" && this.y > -50) this.y = this.y - 20;
@@ -103,14 +101,14 @@ Player.prototype.handleInput = function (inpt) {
 };
 
 // method to reset player position
-Player.prototype.reset = function () {
+Player.prototype.reset = function() {
   this.x = 200;
   this.y = 400;
 };
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
-document.addEventListener("keyup", function (e) {
+document.addEventListener("keyup", function(e) {
   let allowedKeys = {
     37: "left",
     38: "up",
@@ -120,5 +118,3 @@ document.addEventListener("keyup", function (e) {
 
   player.handleInput(allowedKeys[e.keyCode]);
 });
-
-
