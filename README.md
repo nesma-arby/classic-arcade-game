@@ -1,1 +1,20 @@
-# classic-arcade-game
+# Classic Arcade Game Clone Project
+
+## Table of Contents
+
+- [How to run](#run)
+- [How to play arcade game](#play)
+
+## How to run
+
+You don't need anything special to run
+
+
+## How to play arcade game
+
+#####  In this game you have a Player and Enemies (bugs). The goal of the player is to reach the water, without colliding into any one of the enemies.
+
+- The player can move left, right, up and down
+- The enemies move at varying speeds on the paved block portion of the game board
+- Once a the player collides with an enemy, the game is reset and the player moves back to the starting square
+- Once the player reaches the water the game is won

@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+    background: #47475f;
+}
+
+#result{
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
